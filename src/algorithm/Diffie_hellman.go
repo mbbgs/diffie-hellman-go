@@ -21,7 +21,7 @@ func (dh *DiffieHellman) SetPrime(num int) {
 	dh.p = num
 }
 func (dh *DiffieHellman) SetSecret(secret int){
-	dh.secret = secret
+	dh.Secret = secret
 }
 
 func (dh *DiffieHellman) ExchangeSecret(secret int){

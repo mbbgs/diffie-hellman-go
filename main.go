@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"src/algorithm"
+	"diffie-hellman-go/src/algorithm"
 )
 
 func main() {
@@ -28,8 +28,8 @@ func main() {
 		fmt.Println("error generating server public key")
 	}
 
-	server.ExchangePublicKey(&clientPublicKey)
-	client.ExchangePublicKey(&serverPublicKey)
+	server.ExchangePublicKey(clientPublicKey)
+	client.ExchangePublicKey(serverPublicKey)
 
 	clientSharedSecret, clientSecretErr := client.CalculateSharedSecret()
 	if clientSecretErr != nil {
