@@ -35,12 +35,16 @@ func main() {
 	if clientSecretErr != nil {
 		fmt.Println("error calculating client shared secret")
 	}
+	
 
 	serverSharedSecret, serverSecretErr := server.CalculateSharedSecret()
 	if serverSecretErr != nil {
 		fmt.Println("error calculating server shared secret")
 	}
-
+	
+ server.ExchangeSecret(clientSharedSecret)
+	client.ExchangeSecret(serverSharedSecret)
+	
 	clientComparison := client.CompareDecryptedSecret(serverSharedSecret)
 	serverComparison := server.CompareDecryptedSecret(clientSharedSecret)
 

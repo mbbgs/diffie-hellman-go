@@ -42,7 +42,6 @@ func (dh *DiffieHellman) GeneratePrivateKey() int {
 
 
 
-
 func (dh *DiffieHellman) CalculatePublicKey() (int, error) {
 	if dh.g == 0 || dh.private_key == 0 || dh.p == 0 {
 		return 0, _generate_error("Provide valid options to continue")
