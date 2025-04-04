@@ -48,8 +48,8 @@ func main() {
 	clientComparison := client.CompareDecryptedSecret(serverSharedSecret)
 	serverComparison := server.CompareDecryptedSecret(clientSharedSecret)
 
-	fmt.Printf("Client calculated secret: %s\n", clientSharedSecret)
-	fmt.Printf("Server calculated secret: %s\n\n", serverSharedSecret)
+	fmt.Printf("Client calculated secret: %d\n", clientSharedSecret)
+	fmt.Printf("Server calculated secret: %d\n\n", serverSharedSecret)
 	fmt.Println("Client decrypted comparison: ", clientComparison)
 	fmt.Println("Server decrypted comparison: ", serverComparison)
 }
